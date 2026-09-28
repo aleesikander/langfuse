@@ -8,11 +8,11 @@ import { type ScoreDomain } from "@langfuse/shared";
  * @returns The most recent correction or undefined if array is empty
  */
 export function getMostRecentCorrection(
-  corrections: ScoreDomain[],
+  corrections: readonly ScoreDomain[],
 ): ScoreDomain | undefined {
   if (corrections.length === 0) return undefined;
 
-  return corrections.sort(
+  return [...corrections].sort(
     (a, b) => b.timestamp.getTime() - a.timestamp.getTime(),
   )[0];
 }

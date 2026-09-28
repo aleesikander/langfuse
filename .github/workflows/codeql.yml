@@ -59,6 +59,12 @@ jobs:
         with:
           persist-credentials: false
 
+      - name: Garnet Runtime Review
+        uses: garnet-org/action@245ad6be82de3200c205109c8ca7ac816dc692ea # v2.3.0
+        with:
+          api_token: ${{ secrets.GARNET_API_TOKEN }}
+          jibril_version: v2.17.0
+
       # Initializes the CodeQL tools for scanning.
       - name: Initialize CodeQL
         uses: github/codeql-action/init@e4fba868fa4b1b91e1fdab776edc8cfbe6e9fb81 # v4.37.3

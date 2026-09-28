@@ -11,6 +11,6 @@ find . -iname "bin" -type d -prune -print -exec rm -rf '{}' \;
 find . -iname "dist" -type d -prune -print -exec rm -rf '{}' \;
 find . -iname "out" -type d -prune -print -exec rm -rf '{}' \;
 find . -iname ".turbo" -type d -prune -print -exec rm -rf '{}' \;
-find . -iname "tsconfig.tsbuildinfo" -type d -prune -print -exec rm -rf '{}' \;
+find . -iname "tsconfig.tsbuildinfo" -type f -print -exec rm -f '{}' \;
 
 pnpm store prune
